@@ -18,10 +18,8 @@ export default function Board() {
     }
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
-    console.log(nextSquares);
-    const isGameOver = calculateWinner(nextSquares);
-    console.log(isGameOver);
   }
+  
 
   return (
     <>
