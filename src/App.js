@@ -1,8 +1,42 @@
-export default function Square() {
+import { useState } from 'react';
+
+
+export default function Board() {
   return (
     <>
-      <button className="square">X</button>
-      <button className="square">X</button>
+      <div className="board-row">
+        <Square/>
+        <Square/>
+        <Square/>
+      </div>
+      <div className="board-row">
+        <Square/>
+        <Square/>
+        <Square/>
+      </div>
+      <div className="board-row">
+        <Square/>
+        <Square/>
+        <Square/>
+      </div>
     </>
+  );
+}
+
+function Square() {
+  const [value, setCount] = useState(null);
+
+  function handleClick() {
+    setCount("X");
+    console.log('clicked!');
+  }
+
+  return (
+    <button
+      className="square"
+      onClick={handleClick}
+    >
+      {value}
+    </button>
   );
 }
